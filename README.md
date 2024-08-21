@@ -1,1 +1,1 @@
-hyprland dot files
+dot files

@@ -1,15 +1,15 @@
-@define-color window-color         #D3BDA6;
+@define-color window-color         #156E3D;
 @define-color window-back-color    rgba(30, 30, 46, 0.95);
 
 @define-color input-color          #cdd6f4;
 @define-color input-back-color     #45475a;
 
-@define-color image-color          #F4D8CD;
+@define-color image-color          #007E2D;
 
 @define-color inner-box-color      #cba6f7;
 
 @define-color text-selected-color  #313244;
 @define-color text-color           #cdd6f4;
 
-@define-color selected-grad1-color #fab387;
-@define-color selected-grad2-color #FEE5B9;
+@define-color selected-grad1-color #207050;
+@define-color selected-grad2-color #105030;

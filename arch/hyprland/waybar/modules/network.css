@@ -1,6 +1,6 @@
 @import '../current_color.css';
 
-#battery {
+#network {
   border: 2px solid;
   border-radius: 9px;
 
@@ -13,10 +13,6 @@
   border-color: @background_borders;
 }
 
-#battery.charging, #battery.plugged {
-  color: @good;
-}
-
-#battery.critical:not(.charging) {
+#network.disconnected {
   color: @alert;
 }

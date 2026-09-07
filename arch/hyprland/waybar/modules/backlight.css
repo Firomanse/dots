@@ -1,6 +1,6 @@
 @import '../current_color.css';
 
-#battery {
+#backlight {
   border: 2px solid;
   border-radius: 9px;
 
@@ -10,13 +10,5 @@
 
   color: @text;
   background-color: @background;
-  border-color: @background_borders;
-}
-
-#battery.charging, #battery.plugged {
-  color: @good;
-}
-
-#battery.critical:not(.charging) {
-  color: @alert;
+  border-color: @background_borders;      
 }

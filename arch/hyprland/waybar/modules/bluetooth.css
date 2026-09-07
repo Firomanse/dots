@@ -1,6 +1,6 @@
 @import '../current_color.css';
 
-#battery {
+#bluetooth {
   border: 2px solid;
   border-radius: 9px;
 
@@ -13,10 +13,6 @@
   border-color: @background_borders;
 }
 
-#battery.charging, #battery.plugged {
-  color: @good;
-}
-
-#battery.critical:not(.charging) {
-  color: @alert;
+#bluetooth.disconnected {
+  color: @disabled_background;
 }

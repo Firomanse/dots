@@ -1,6 +1,6 @@
 @import '../current_color.css';
 
-#battery {
+#tray { 
   border: 2px solid;
   border-radius: 9px;
 
@@ -13,10 +13,10 @@
   border-color: @background_borders;
 }
 
-#battery.charging, #battery.plugged {
-  color: @good;
+#tray > .passive {
+  -gtk-icon-effect: dim;
 }
 
-#battery.critical:not(.charging) {
-  color: @alert;
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
 }

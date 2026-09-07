@@ -1,0 +1,39 @@
+@import '../current_color.css';
+
+#wireplumber {
+  border: 2px solid;
+  border-radius: 9px;
+
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: 4px 3px 4px 3px;
+
+  color: @text;
+  background-color: @background;
+  border-color: @background_borders;
+
+  transition:
+    color            1s,
+    background-color 1s,
+    border-color     1s;
+}
+
+#wireplumber.muted {
+  color: @invert_text;
+  background-color: @disabled_background;
+  border-color: @disabled_borders;
+}
+
+#wireplumber:focus {
+  color: @invert_text;
+  background-color: @invert_background;
+  border-color: @invert_borders;
+}
+
+#wireplumber:hover {
+  background: inherit;
+  
+  color: @invert_text;
+  background-color: @invert_background;
+  border-color: @invert_borders;
+}

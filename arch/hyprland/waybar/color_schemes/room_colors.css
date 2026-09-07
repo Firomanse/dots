@@ -1,1 +1,18 @@
+@define-color transparent         rgba(0, 0, 0, .0);
+@define-color black               #000000;
+@define-color white               #FFFFFF;
 
+@define-color text                #352F2A;
+@define-color background          #9E8E7D;
+@define-color background_borders  #6A5F53;
+
+@define-color good                #26765B;
+@define-color alert               #CE3535;
+@define-color info                #EBE8A5;
+
+@define-color disabled_background #868788;
+@define-color disabled_borders    #565758;
+
+@define-color invert_text         #D1C3BC;
+@define-color invert_background   #4F473E;
+@define-color invert_borders      #6A5F53;

@@ -1,0 +1,6 @@
+hotkey-overlay {
+  // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
+  // skip-at-startup
+}
+
+screenshot-path "~/pictures/screenshots/Screenshot_from_%Y-%m-%d_%H-%M-%S.png"

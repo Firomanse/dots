@@ -1,233 +1,77 @@
+@import 'current_color.css';
+
 * {
-    font-family: ArimoNerdFont;
-    font-size: 13px;
-    font-weight: bold;
-    min-height: 0px;
+  /*fonts*/
+  font-family: ArimoNerdFont;
+  font-size: 13px;
+  font-weight: bold;
+  min-height: 0px;
+  
+  /*next code isn't working*/
+
+  /*borders*/
+  /*border: 2px solid;
+  border-radius: 9px;*/
+
+  /*spacing*/
+  /*padding-left: 3px;
+  padding-right: 3px;
+  margin: 4px 3px 4px 3px;*/
+
+  /*colors*/
+  /*color: @text;
+  background-color: @background;
+  border-color: @background_borders;*/
 }
 
 window#waybar {
-    border: none; /*border around bar*/
-    border-radius: 0px; /*border radius*/
-    background-color: rgba(0, 0, 0, .0);
+  border: none;
+  background-color: @transparent;
 }
 
-#pulseaudio,
-#network,
-#backlight,
-#cpu,
-#memory,
-#temperature,
-#battery,
-#clock,
-#tray,
-#window,
-#workspaces {
-    margin: 0 4px;
+
+/*modules*/
+@import 'modules/tray.css';
+@import 'modules/clock.css';
+@import 'modules/battery.css';
+@import 'modules/language.css';
+@import 'modules/temperature.css';
+@import 'modules/memory.css';
+@import 'modules/cpu.css';
+@import 'modules/backlight.css';
+@import 'modules/network.css';
+@import 'modules/bluetooth.css';
+@import 'modules/wireplumber.css';
+@import 'modules/workspaces.css';
+
+
+/*groups*/
+#custom-stats-wrap {
+  border: 2px solid;
+  border-radius: 9px;
+
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: 4px 3px 4px 3px;
+
+  color: @text;
+  background-color: @background;
+  border-color: @background_borders;
+}
+#custom-net-wrap {
+  border: 2px solid;
+  border-radius: 9px;
+
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: 4px 3px 4px 3px;
+
+  color: @text;
+  background-color: @background;
+  border-color: @background_borders;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
+/*.modules-left > widget:first-child > #workspaces {
     margin-left: 0;
-}
-
-#clock {
-    color: #352F2A;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px; /*up, right, down, left*/
-}
-
-#battery {
-    color: #352F2A;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#battery.charging, #battery.plugged {
-    color: #26A65B;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#battery.critical:not(.charging) {
-    color: #CE2525;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#language {
-    color: #352F2A;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-    min-width: 16px;
-}
-
-#temperature {
-    color: #352F2A;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#temperature.critical {
-    color: #CE2525;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#memory {
-    color: #352F2A;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#cpu {
-    color: #352F2A;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#backlight {
-    color: #352F2A;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#network {
-    color: #352F2A;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#network.disconnected {
-    color: #CE2525;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#pulseaudio {
-    color: #352F2A;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#pulseaudio.muted {
-    color: #2A5C45;
-    background-color: #90B1B1;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #4F473E;
-}
-
-/* uncompleted */
-
-#tray { 
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #9E8E7D;
-    border: 2px solid #6A5F53;
-    border-radius: 9px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 4px 3px 4px 3px;
-}
-
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-}
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #ffffff;
-}
-
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
+}*/

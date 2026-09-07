@@ -13,12 +13,9 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "pulseaudio",
-        "network",
-	"backlight",
-	"cpu",
-        "memory",
-        "temperature",
+        "wireplumber",
+        "group/net",
+        "group/stats",
         "hyprland/language",
         "battery",
         "clock",
@@ -47,14 +44,14 @@
     },
     "clock": {
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%d-%m-%Y}"
     },
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ䷀"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -93,7 +90,17 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-    "pulseaudio": {
+    "bluetooth": {
+	      // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	      "format": " {status}",
+	      "format-disabled": " {status}", // an empty format will hide the module
+	      "format-connected": " {num_connections} connected",
+	      "tooltip-format": "{controller_alias}\\t{controller_address}",
+	      "tooltip-format-connected": "{controller_alias}\\t{controller_address}\\n\\n{device_enumerate}",
+	      "tooltip-format-enumerate-connected": "{device_alias}\\t{device_address}",
+        "on-click": "blueman-manager"
+    },
+    "wireplumber": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
@@ -113,6 +120,40 @@
         "on-click": "pavucontrol"
     },
     "hyprland/language": {
-	"format": "{shortDescription}"
+	    "format": "{shortDescription}"
+    },
+    "group/stats": {
+      "orientation": "horizontal",
+      "drawer": {
+        "transition-duration": 300,
+        "transition-left-to-right": false
+      },
+      "modules": [
+        "custom/stats-wrap",
+        "backlight",
+        "temperature",
+        "cpu",
+        "memory"
+      ]
+    },
+    "custom/stats-wrap": {
+      "format": "☰",
+      "tooltip-format": "stats"
+    },
+    "group/net": {
+      "orientation": "horizontal",
+      "drawer": {
+        "transition-duration": 300,
+        "transition-left-to-right": false
+      },
+      "modules": [
+        "custom/net-wrap",
+        "network",
+        "bluetooth"
+      ]
+    },
+    "custom/net-wrap": {
+      "format": "",
+      "tooltip-format": "net"
     }
 }

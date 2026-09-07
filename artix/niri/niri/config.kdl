@@ -1,0 +1,11 @@
+include "config/input.kdl"
+include "config/output.kdl"
+include "config/autostart.kdl"
+include "config/windows.kdl"
+include "config/rules.kdl"
+include "config/keybinds.kdl"
+include "config/environment.kdl"
+include "config/other.kdl"
+
+//colors
+include "noctalia.kdl"
